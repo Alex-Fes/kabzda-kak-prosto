@@ -9,10 +9,12 @@ function App() {
     return (
         <div>
             <PageTitle title={'This is APP component'}/>
-            Article 1
+            <h4>Article 1</h4>
             <Raiting value={1}/>
-            <Accordion title={'Menu'}/>
-            Article 2
+            <Accordion titleValue={'Menu'} collapsed={true} />
+            <Accordion titleValue={'Users'} collapsed={false} />
+            <h4> Article 2</h4>
+            <Raiting value={0}/>
             <Raiting value={1}/>
             <Raiting value={2}/>
             <Raiting value={3}/>
@@ -21,4 +23,5 @@ function App() {
         </div>
     );
 }
+
 export default App;
