@@ -4,14 +4,22 @@ import Accordion from "./components/Accordion/Accordion";
 import Raiting from "./components/Raiting/Raiting";
 import PageTitle from "./components/PageTitle/PageTitle";
 import OnOff from "./components/OnOff/OnOff";
+import UncontrolledAccordion from "./components/Accordion/Accordion";
+import UncotrolledRaiting from "./components/Raiting/UncontrolledRaiting";
 
 
 function App() {
     return (
         <div>
 
-            <OnOff on={true} />
-
+            <OnOff />
+            <OnOff />
+            <OnOff />
+            <OnOff />
+            <OnOff />
+            <UncontrolledAccordion titleValue={'Menu'} />
+            <UncontrolledAccordion titleValue={'Users'} />
+            <UncotrolledRaiting />
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<h4>Article 1</h4>*/}
             {/*<Raiting value={1}/>*/}
