@@ -1,29 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import Raiting from "./components/Raiting/Raiting";
-import PageTitle from "./components/PageTitle/PageTitle";
+import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 import OnOff from "./components/OnOff/OnOff";
-import UncontrolledAccordion from "./components/Accordion/Accordion";
 import UncotrolledRaiting from "./components/Raiting/UncontrolledRaiting";
+import Raiting, {RaitingValueType} from "./components/Raiting/Raiting";
+import { Accordion } from './components/Accordion/Accordion';
+import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
+
 
 
 function App() {
+
+    let [raitingValue, setRaitingValue] = useState<RaitingValueType>(0)
+    let [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(false)
+    let [changeOnOff, setChangeOnOff] = useState(true)
+
     return (
         <div>
-
-            <OnOff />
-            <OnOff />
-            <OnOff />
-            <OnOff />
-            <OnOff />
-            <UncontrolledAccordion titleValue={'Menu'} />
-            <UncontrolledAccordion titleValue={'Users'} />
-            <UncotrolledRaiting />
+            <Raiting value={raitingValue} onClick={setRaitingValue}/>
+            <Accordion titleValue={'Menu'} collapsed={collapsedAccordion} onClick={setCollapsedAccordion} />
+            {/*<UncontrolledOnOff />*/}
+            <OnOff startValue={changeOnOff} onClick={setChangeOnOff} />
+            {/*<OnOff/>*/}
+            {/*<OnOff/>*/}
+            {/*<OnOff/>*/}
+            {/*<OnOff/>*/}
+            {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
+            {/*<UncontrolledAccordion titleValue={'Users'}/>*/}
+            {/*<UncotrolledRaiting/>*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<h4>Article 1</h4>*/}
-            {/*<Raiting value={1}/>*/}
-            {/*<Accordion titleValue={'Menu'} collapsed={true} />*/}
+
+
+
             {/*<Accordion titleValue={'Users'} collapsed={false} />*/}
             {/*<h4> Article 2</h4>*/}
             {/*<Raiting value={0}/>*/}

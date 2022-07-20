@@ -1,38 +1,28 @@
-import React, {MouseEventHandler, useState} from "react";
-
+import React from "react";
 
 type AccordionPropsType = {
     titleValue: string
-    // collapsed: boolean
+    collapsed: CollapsedAccordionType
+    onClick: (value:CollapsedAccordionType) => void
 }
 type AccordionTitlePropsType = {
     title: string
+    onClick: (value:CollapsedAccordionType) => void
+    collapsed:CollapsedAccordionType
+}
+type CollapsedAccordionType = true | false;
+
+export const Accordion = (props: AccordionPropsType) => {
+    return <div>
+        <AccordionTitle title={props.titleValue} onClick={props.onClick} collapsed={props.collapsed}/>
+        {!props.collapsed && <AccordionBody/>}
+    </div>
 }
 
-function UncontrolledAccordion(props: AccordionPropsType) {
-    let [collapsed, setCollapsed] = useState(true);
-
-
-    // let collapsedHandler = () => {
-    //    if(collapsed === false) {
-    //        return setCollapsed(true)
-    //    } else {setCollapsed(false)}
-    //         }
-
-
-    return (<div>
-        <AccordionTitle title={props.titleValue}/>
-        {/*<button onClick={collapsedHandler}>TOGGLE</button>*/}
-        <button onClick={()=>{setCollapsed(!collapsed)}}>TOGGLE</button>
-        {!collapsed && <AccordionBody/>}
-    </div>)
-}
-
-
-function AccordionTitle(props: AccordionTitlePropsType) {
-    return (
-        <div><h3>{props.title}</h3></div>
-    )
+const AccordionTitle = (props: AccordionTitlePropsType) => {
+    return <h3 onClick={() => {
+        props.onClick(!props.collapsed)
+    }}>{props.title}</h3>
 }
 
 function AccordionBody() {
@@ -45,4 +35,11 @@ function AccordionBody() {
     )
 }
 
-export default UncontrolledAccordion;
+
+
+
+
+
+
+
+

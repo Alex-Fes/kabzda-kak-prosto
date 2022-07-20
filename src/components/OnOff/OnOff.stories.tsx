@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import {ComponentStory, ComponentMeta} from '@storybook/react';
-import OnOff from "./OnOff";
+import React from 'react';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
+import UncontrolledOnOff from "./UncontrolledOnOff";
 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'OnOff',
-    component: OnOff,
+    title: 'UncontrolledOnOff',
+    component: UncontrolledOnOff,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         backgroundColor: {control: 'color'},
     },
-} as ComponentMeta<typeof OnOff>;
+} as ComponentMeta<typeof UncontrolledOnOff>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const OnMode: ComponentStory<typeof OnOff> = () => <OnOff />;
+export const OnMode: ComponentStory<typeof UncontrolledOnOff> = () => <UncontrolledOnOff />;
