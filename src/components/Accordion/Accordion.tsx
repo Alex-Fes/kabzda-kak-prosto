@@ -13,16 +13,17 @@ function UncontrolledAccordion(props: AccordionPropsType) {
     let [collapsed, setCollapsed] = useState(true);
 
 
-    let collapsedHandler = () => {
-       if(collapsed === false) {
-           return setCollapsed(true)
-       } else {setCollapsed(false)}
-            }
+    // let collapsedHandler = () => {
+    //    if(collapsed === false) {
+    //        return setCollapsed(true)
+    //    } else {setCollapsed(false)}
+    //         }
 
 
     return (<div>
         <AccordionTitle title={props.titleValue}/>
-        <button onClick={collapsedHandler}>TOGGLE</button>
+        {/*<button onClick={collapsedHandler}>TOGGLE</button>*/}
+        <button onClick={()=>{setCollapsed(!collapsed)}}>TOGGLE</button>
         {!collapsed && <AccordionBody/>}
     </div>)
 }

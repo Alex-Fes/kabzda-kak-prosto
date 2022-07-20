@@ -1,8 +1,9 @@
 import React from "react";
 
 
-type RaitingPropsType = {
+export type RaitingPropsType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
+
 }
 
 type StarPropsType = {

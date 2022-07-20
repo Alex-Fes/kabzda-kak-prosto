@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 type RaitingPropsType = {
-    // value: 0 | 1 | 2 | 3 | 4 | 5
+     value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
 type StarPropsType = {
@@ -11,14 +11,11 @@ type StarPropsType = {
 
 function UncotrolledRaiting(props: RaitingPropsType) {
     let [star, setStar] = useState(0);
-
     // const starHandler = () => {
     //     if(star !== true) {
     //         return setStar(false)
     //     } else {setStar(true)}
     // }
-
-
     return (
         <div>
             <Star selected={star > 0}/><button onClick={()=>{setStar(1)}}>1</button>
@@ -29,7 +26,6 @@ function UncotrolledRaiting(props: RaitingPropsType) {
         </div>
     )
 }
-
 function Star(props: StarPropsType ) {
     if (props.selected === true) {
         return <span><b> Star</b> </span>
