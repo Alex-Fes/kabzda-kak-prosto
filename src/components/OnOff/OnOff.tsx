@@ -2,10 +2,8 @@ import React from "react";
 
 type PropsType = {
     startValue: boolean
-    onClick: (value: ChangeOnOffType) => void
+    onClick: (on: boolean) => void
 }
-type ChangeOnOffType = true | false;
-
 
 function OnOff(props: PropsType) {
     const onStyle = {
@@ -37,10 +35,10 @@ function OnOff(props: PropsType) {
     };
     return <div>
         <div style={onStyle} onClick={() => {
-            props.onClick(!props.startValue)
+            props.onClick(true)
         }}>On</div>
         <div style={offStyle} onClick={() => {
-            props.onClick(!props.startValue)
+            props.onClick(false)
         }}>Off</div>
         <div style={indicatorStyle}></div>
     </div>
