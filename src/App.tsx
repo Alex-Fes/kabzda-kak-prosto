@@ -20,8 +20,8 @@ function App() {
                        collapsed={collapsedAccordion}
                        onClick={() => {setCollapsedAccordion(!collapsedAccordion)}}/>
             <UncontrolledOnOff onChange={setChangeOnOff}/> {changeOnOff.toString()}
-            {/*<OnOff startValue={changeOnOff}*/}
-            {/*       onClick={setChangeOnOff}/>*/}
+            <OnOff startValue={changeOnOff}
+                   onClick={setChangeOnOff}/>
 
 
             {/*<OnOff/>*/}

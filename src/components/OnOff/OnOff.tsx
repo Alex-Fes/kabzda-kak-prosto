@@ -34,10 +34,10 @@ function OnOff(props: PropsType) {
         backgroundColor: props.startValue ? 'green' : 'red'
     };
     return <div>
-        <div style={onStyle} onClick={() => {
+        <div style={onStyle} onClick={(e) => {
             props.onClick(true)
         }}>On</div>
-        <div style={offStyle} onClick={() => {
+        <div style={offStyle} onClick={(e) => {
             props.onClick(false)
         }}>Off</div>
         <div style={indicatorStyle}></div>
