@@ -14,6 +14,7 @@ export default {
 } as ComponentMeta<typeof UncontrolledAccordion>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const UncontrolledModeChanging: ComponentStory<typeof UncontrolledAccordion> = () => <UncontrolledAccordion
-    titleValue={'User'}/>;
-
+export const UncontrolledCollapsed: ComponentStory<typeof UncontrolledAccordion> = () => <UncontrolledAccordion
+    titleValue={'User'} defaultValue={false}/>;
+export const UncontrolledUnCollapsed: ComponentStory<typeof UncontrolledAccordion> = () => <UncontrolledAccordion
+    titleValue={'User'} defaultValue={true}/>;

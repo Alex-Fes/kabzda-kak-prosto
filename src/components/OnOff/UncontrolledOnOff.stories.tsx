@@ -15,6 +15,7 @@ export default {
 } as ComponentMeta<typeof UncontrolledOnOff>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const callback = action('on or off clicked');
-export const ModeChanging: ComponentStory<typeof UncontrolledOnOff> = () => {
-    return <UncontrolledOnOff onChange={callback}/>
-}
+export const ModeOn: ComponentStory<typeof UncontrolledOnOff> = () => <UncontrolledOnOff onChange={callback}
+                                                                                         defaultOn={true}/>
+export const ModeOff: ComponentStory<typeof UncontrolledOnOff> = () => <UncontrolledOnOff onChange={callback}
+                                                                                          defaultOn={false}/>

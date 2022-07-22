@@ -3,6 +3,7 @@ import React, {useState} from "react";
 
 type AccordionPropsType = {
     titleValue: string
+    defaultValue?: boolean
 }
 type AccordionTitlePropsType = {
     title: string
@@ -10,7 +11,7 @@ type AccordionTitlePropsType = {
 }
 
 function UncontrolledAccordion(props: AccordionPropsType) {
-    let [collapsed, setCollapsed] = useState(true);
+    let [collapsed, setCollapsed] = useState(props.defaultValue ? props.defaultValue : false);
 
     return (<div>
         <AccordionTitle title={props.titleValue} onClick={() => {
