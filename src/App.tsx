@@ -11,14 +11,24 @@ function App() {
     let [raitingValue, setRaitingValue] = useState<RaitingValueType>(0)
     let [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(false)
     let [changeOnOff, setChangeOnOff] = useState(true)
-
+    let items = [{title: 'Alex', value: 1},
+        {title: 'Vika', value: 2},
+        {title: 'Yana', value: 3},
+        {title: 'Natasha', value: 4}]
+    const onChange = (value: any) => {
+        alert(value)
+    }
     return (
         <div>
             <Raiting value={raitingValue}
                      onClick={setRaitingValue}/>
             <Accordion titleValue={'Menu'}
                        collapsed={collapsedAccordion}
-                       onClick={() => {setCollapsedAccordion(!collapsedAccordion)}}/>
+                       onClick={() => {
+                           setCollapsedAccordion(!collapsedAccordion)
+                       }}
+                       items={items}
+                       onChange={onChange}/>
             <UncontrolledOnOff onChange={setChangeOnOff}/> {changeOnOff.toString()}
             <OnOff startValue={changeOnOff}
                    onClick={setChangeOnOff}/>

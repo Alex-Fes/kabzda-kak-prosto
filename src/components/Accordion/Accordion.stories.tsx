@@ -18,19 +18,34 @@ export default {
 
 const callback = action('accordion mode change event');
 
-export const MenuColapsed: ComponentStory<typeof Accordion> = () => <Accordion
+export const MenuCollapsed: ComponentStory<typeof Accordion> = () => <Accordion
     titleValue={'Title'}
     collapsed={false}
     onClick={callback}
+    onChange={(value: any)=> {alert(value)}}
+    items={[]}
 />;
-export const MenuUnColapsed: ComponentStory<typeof Accordion> = () => <Accordion
+export const MenuUnCollapsed: ComponentStory<typeof Accordion> = () => <Accordion
     titleValue={'User'}
     collapsed={true}
     onClick={callback}
-/>;
+    onChange={(value: any)=> {alert(value)}}
+    items={[{title: 'Alex', value: 1},
+        {title: 'Vika', value: 2},
+        {title: 'Yana', value: 3},
+        {title: 'Natasha', value: 4}]}/>;
 
 export const ModeChanging: ComponentStory<typeof Accordion> = () => {
     const [value, setValue] = useState<boolean>(true);
-    return <Accordion  titleValue={'User'} collapsed={value} onClick={()=>{setValue(!value)}}/>
+    return <Accordion titleValue={'User'}
+                      collapsed={value}
+                      onClick={() => {
+                          setValue(!value)
+                      }}
+                      items={[{title: 'Alex', value: 1},
+                          {title: 'Vika', value: 2},
+                          {title: 'Yana', value: 3},
+                          {title: 'Natasha', value: 4}]}
+                      onChange={(value: any)=> {alert(value)}}/>
 };
 
