@@ -5,6 +5,7 @@ import Raiting, {RaitingValueType} from "./components/Raiting/Raiting";
 import {Accordion} from './components/Accordion/Accordion';
 import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
 import {Select} from "./components/Select/Select";
+import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
             {/*<OnOff/>*/}
             {/*<OnOff/>*/}
             {/*<OnOff/>*/}
-            {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
+            <UncontrolledAccordion titleValue={'Menu'}/>
             {/*<UncontrolledAccordion titleValue={'Users'}/>*/}
             {/*<UncotrolledRaiting/>*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
