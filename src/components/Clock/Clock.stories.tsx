@@ -3,12 +3,16 @@ import {Clock} from "./Clock";
 
 export default {
     title: 'Clock demo',
-    component: Clock
+
 }
 
 
-export const Example1 = () => {
- return <Clock/>
+export const DigitalClock = () => {
+    return <Clock mode={'digital'}/>
+};
+
+export const AnalogClockDemo = () => {
+    return <Clock mode={'analog'}/>
 };
 
 
